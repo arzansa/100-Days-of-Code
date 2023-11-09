@@ -15,4 +15,4 @@ while not valid:
     except:
         print("please enter a valid amount.")
 
-print("your tip should be $" + str('{0:.2f}'.format(cost*percent*.01, 2)) + " for a total of $" + str('{0:.2f}'.format(cost+cost*percent*.01, 2)))
+print("your tip should be $" + str(f'{cost*percent*.01:.2f}') + " for a total of $" + str(f'{cost+cost*percent*.01:.2f}'))

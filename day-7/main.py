@@ -24,9 +24,8 @@ logo = art.logo
 stages = art.stages
 word_list = words.word_list
 
-random_word = random.randint(0, len(word_list))
+random_word = random.randint(0, len(word_list)-1)
 word = word_list[random_word]
-print(word)
 spaces = []
 guesses = []
 guessed = False
@@ -78,7 +77,9 @@ while(not game_end):
         game_end = True
 
     if '_' not in spaces:
-        print('You Win!')
+        print('\n')
+        print(*spaces)
+        print('\nYou Win!\n')
         game_end = True
 
     correct = False

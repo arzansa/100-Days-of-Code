@@ -1,8 +1,6 @@
 import random
 
-
 word_list = ["aardvark", "baboon", "camel"]
-
 
 random_word = random.randint(0, 2)
 word = word_list[random_word]

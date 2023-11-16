@@ -74,6 +74,7 @@ while(not game_end):
     if lives is 0:
         print('\nYou lose!\n')
         print(f'Word was {word}\n')
+        print(stages[lives])
         game_end = True
 
     if '_' not in spaces:

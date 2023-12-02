@@ -22,14 +22,20 @@ shift = int(input("Type the shift number:\n"))
 
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
 
-def encrypt(text, shift):
+def caesar(text, shift, direction):
     encrypted_text = ''
     for i in range(0, len(text)):
-        try:
-            encrypted_text += alphabet[alphabet.index(text[i])+int(shift)]       
-        except IndexError as e:
-            encrypted_text += alphabet[alphabet.index(text[i])-(26-int(shift))]
+        if (direction == 'encode'):
+            try:
+                encrypted_text += alphabet[alphabet.index(text[i])+int(shift)]       
+            except IndexError as e:
+                encrypted_text += alphabet[alphabet.index(text[i])-(26-int(shift))]
+        if (direction == 'decode'):
+            try:
+                encrypted_text += alphabet[alphabet.index(text[i])-int(shift)]       
+            except IndexError as e:
+                encrypted_text += alphabet[alphabet.index(text[i])+(26-int(shift))]
     return encrypted_text
 
 
-print(encrypt(text, shift))
+print(caesar(text, shift, direction))
